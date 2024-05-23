@@ -71,4 +71,4 @@ Request data for product and order creation and updating operations is validated
 Certainly, I didn't do the **Inventory Update**.
 
 
-Live server link- assignment2-nine-smoky.vercel.app
+Live server link-assignment2-nine-smoky.vercel.app
