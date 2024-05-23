@@ -7,7 +7,7 @@ const createProduct = async (req: Request, res: Response) => {
     try {
         // Validate request body against Zod schema
         const validatedData = createProductSchema.parse(req.body);
-        
+
         const result = await ProductServices.createProduct(validatedData);
 
         res.status(201).json({
@@ -40,32 +40,43 @@ const getAllProducts = async (req: Request, res: Response) => {
             message: "Products fetched successfully!",
             data: result,
         });
-    } catch (err: any) {
+    } catch (err: unknown) {
+        let errorMessage = 'Unknown error';
+        if (err instanceof Error) {
+            errorMessage = err.message;
+        }
+
         res.status(500).json({
             success: false,
             message: "Could not fetch products!",
-            error: err.message || 'Unknown error',
+            error: errorMessage,
         });
     }
 };
 
 const getProductsBySlug = async (req: Request, res: Response) => {
 
-    const {slug} = req.params;
+    const { slug } = req.params;
     const result = await ProductServices.getProductsBySlug(slug);
-    try{
+    try {
         res.status(200).json({
             success: true,
             message: "Product fetched successfully!!",
             data: result,
         })
-    } catch(err: any) {
+    } catch (err: unknown) {
+        let errorMessage = 'Unknown error';
+        if (err instanceof Error) {
+            errorMessage = err.message;
+        }
+
         res.status(500).json({
             success: false,
             message: "Could not fetch!",
-            error: err,
-        })
+            error: errorMessage,
+        });
     }
+
 };
 
 const deleteProduct = async (req: Request, res: Response) => {
@@ -75,7 +86,7 @@ const deleteProduct = async (req: Request, res: Response) => {
 
         const result = await ProductServices.deleteProduct(id);
         if (!result) {
-             res.status(404).json({
+            res.status(404).json({
                 success: false,
                 message: "Product not found!",
             });
@@ -85,14 +96,15 @@ const deleteProduct = async (req: Request, res: Response) => {
             message: "Product deleted successfully!!",
             data: result,
         });
-    } catch (err: any) {
-        console.error("Error deleting product:", err);
+    } catch (err: unknown) {
+        // console.error("Error deleting product:", err);
         res.status(500).json({
             success: false,
             message: "Could not delete product!",
             error: err instanceof Error ? err.message : 'Unknown error',
         });
     }
+
 };
 
 const updateProduct = async (req: Request, res: Response) => {
@@ -105,13 +117,19 @@ const updateProduct = async (req: Request, res: Response) => {
             message: "Product updated successfully!!",
             data: result,
         });
-    } catch (err: any) {
+    } catch (err: unknown) {
+        let errorMessage = 'Unknown error';
+        if (err instanceof Error) {
+            errorMessage = err.message;
+        }
+
         res.status(500).json({
             success: false,
             message: "Could not update product!",
-            error: err,
+            error: errorMessage,
         });
     }
+
 };
 
 export const ProductControllers = {

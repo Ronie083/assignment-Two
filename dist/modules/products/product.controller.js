@@ -51,10 +51,14 @@ const getAllProducts = (req, res) => __awaiter(void 0, void 0, void 0, function*
         });
     }
     catch (err) {
+        let errorMessage = 'Unknown error';
+        if (err instanceof Error) {
+            errorMessage = err.message;
+        }
         res.status(500).json({
             success: false,
             message: "Could not fetch products!",
-            error: err.message || 'Unknown error',
+            error: errorMessage,
         });
     }
 });
@@ -69,10 +73,14 @@ const getProductsBySlug = (req, res) => __awaiter(void 0, void 0, void 0, functi
         });
     }
     catch (err) {
+        let errorMessage = 'Unknown error';
+        if (err instanceof Error) {
+            errorMessage = err.message;
+        }
         res.status(500).json({
             success: false,
             message: "Could not fetch!",
-            error: err,
+            error: errorMessage,
         });
     }
 });
@@ -94,7 +102,7 @@ const deleteProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* 
         });
     }
     catch (err) {
-        console.error("Error deleting product:", err);
+        // console.error("Error deleting product:", err);
         res.status(500).json({
             success: false,
             message: "Could not delete product!",
@@ -114,10 +122,14 @@ const updateProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* 
         });
     }
     catch (err) {
+        let errorMessage = 'Unknown error';
+        if (err instanceof Error) {
+            errorMessage = err.message;
+        }
         res.status(500).json({
             success: false,
             message: "Could not update product!",
-            error: err,
+            error: errorMessage,
         });
     }
 });
