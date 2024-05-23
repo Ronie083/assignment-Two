@@ -28,37 +28,37 @@ This project is an e-commerce application built using Express and TypeScript, wi
 **Product Management**
 
 - "Create a New Product"
-Endpoint: /api/products
+Endpoint: /api/products; 
 Method: POST
 
 - "Retrieve a List of All Products"
-Endpoint: /api/products
+Endpoint: /api/products; 
 Method: GET
 
 - "Retrieve a Specific Product by ID"
-Endpoint: /api/products/:productId
+Endpoint: /api/products/:productId; 
 Method: GET
 
 - "Update Product Information"
-Endpoint: /api/products/:productId
+Endpoint: /api/products/:productId; 
 Method: PUT
 
 - "Delete a Product"
-Endpoint: /api/products/:productId
+Endpoint: /api/products/:productId; 
 Method: DELETE
 
 - "Search a Product"
-Endpoint: /api/products?searchTerm=iphone
+Endpoint: /api/products?searchTerm=iphone; 
 Method: GET
 
 **Order Management**
 
 - "Create a New Order"
-Endpoint: /api/orders
+Endpoint: /api/orders; 
 Method: POST
 
 - "Retrieve All Orders"
-Endpoint: /api/orders
+Endpoint: /api/orders; 
 Method: GET
 
 - "Retrieve Orders by User Email"
@@ -72,4 +72,4 @@ Request data for product and order creation and updating operations is validated
 Certainly, I didn't do the **Inventory Update**.
 
 
-Live server link-[assignment2-nine-smoky.vercel.app]
+Live server link-[assignment2-nine-smoky.vercel.app](https://assignment2-nine-smoky.vercel.app)
