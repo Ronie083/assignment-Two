@@ -23,7 +23,8 @@ This project is an e-commerce application built using Express and TypeScript, wi
 3. Set up your MongoDB database and configure environment variables (see Configuration).
 4. Start the server
 
-##API Endpoints
+## API Endpoints
+
 **Product Management**
 
 - "Create a New Product"
