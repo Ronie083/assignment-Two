@@ -9,7 +9,7 @@ This project is an e-commerce application built using Express and TypeScript, wi
 3. Create and view orders
 4. Validate request data using Zod
 
-##Technologies Used
+## Technologies Used
 - Node.js
 - Express
 - TypeScript
@@ -68,3 +68,6 @@ Method: GET
 Request data for product and order creation and updating operations is validated using Zod to ensure adherence to the defined data models. Validation errors are handled gracefully, providing meaningful error messages in API responses.
 
 Certainly, I didn't do the **Inventory Update**.
+
+
+Live server link- assignment2-nine-smoky.vercel.app
