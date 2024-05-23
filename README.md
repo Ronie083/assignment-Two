@@ -63,6 +63,7 @@ Method: GET
 
 - "Retrieve Orders by User Email"
 Endpoint: /api/orders?email=level2@programming-hero.com
+
 Method: GET
 
 ## Validation
@@ -71,4 +72,4 @@ Request data for product and order creation and updating operations is validated
 Certainly, I didn't do the **Inventory Update**.
 
 
-Live server link-assignment2-nine-smoky.vercel.app
+Live server link-[assignment2-nine-smoky.vercel.app]
